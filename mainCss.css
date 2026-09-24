@@ -1,5 +1,574 @@
-/* body */
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    background-color: aqua;
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #080b14;
+
+    background-image:
+        radial-gradient(
+            rgba(139, 92, 246, 0.15) 1px,
+            transparent 1px
+        );
+
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    color: #e5e7eb;
+}
+
+
+/* =========================================================
+   CABECERA SUPERIOR
+   ========================================================= */
+
+.barrasuperior {
+    
+    display: flex;
+
+    margin: 20px auto;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+
+    background: rgba(17, 24, 39, 0.82);
+
+    border-top: 1px solid rgba(139, 92, 246, 0.35);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.35);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.imglogo {
+    display: flex;
+    width: 400px;
+    align-items: center;
+}
+
+.logo{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.datosPresentacion{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.imglogo img {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-items: space-between;
+    /* align-self: center; */
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+    filter:
+        drop-shadow(0 0 8px rgb(113, 246, 92));
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.titulillo {
+    margin: 0;
+
+    text-transform: capitalize;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 25px;
+    font-style: italic;
+    letter-spacing: 1px;
+
+    color: #e5e7eb;
+
+    text-shadow:
+        0 0 12px rgba(139, 92, 246, 0.35);
+}
+
+.subtitulo{
+     margin: 0;
+
+    text-transform: capitalize;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 1px;
+
+    color: #e5e7eb;
+
+    text-shadow:
+        0 0 12px rgba(139, 92, 246, 0.35);
+}
+
+/* =========================================================
+   REDES SOCIALES
+   ========================================================= */
+
+.redes {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100px;
+
+    list-style-type: none;
+}
+
+.f,
+.t {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.f:hover,
+.t:hover {
+    transform: translateY(-3px) scale(1.1);
+
+    filter:
+        drop-shadow(0 0 7px rgba(6, 182, 212, 0.8));
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    width: 800px;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    justify-self: center;
+
+    list-style-type: none;
+
+    text-transform: capitalize;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.button {
+    width: auto;
+
+    color: #e5e7eb;
+
+    transform-origin: center;
+
+    font-family: "JetBrains Mono", "Courier New", monospace;
+
+    text-transform: capitalize;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding-bottom: 3px;
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 4px 0 #17144d,
+        0 7px 15px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        );
+
+    color: #ffffff;
+
+    transform:
+        rotate(5deg)
+        translateY(-4px);
+
+    box-shadow:
+        0 5px 0 #17144d,
+        0 10px 20px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(6, 182, 212, 0.35);
+}
+
+.button span {
+    display: block;
+
+    padding: 0.5rem 0.5rem;
+
+    border-radius: 7px;
+
+    background: rgba(0, 0, 0, 0.12);
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.button span:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+
+    border-color: #06b6d4;
+}
+
+.button:active {
+    transform:
+        rotate(5deg)
+        translateY(5px);
+
+    padding-bottom: 0;
+
+    outline: 0;
+
+    box-shadow:
+        0 1px 0 #17144d;
+}
+
+
+/* =========================================================
+   CABECERA / PRESENTACIÓN
+   ========================================================= */
+
+.capcelera {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 25px 0 45px;
+}
+
+
+/* =========================================================
+   CAJA DE PRESENTACIÓN
+   ========================================================= */
+
+.box {
+    position: relative;
+
+    width: 800px;
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(17, 24, 39, 0.95),
+            rgba(15, 23, 42, 0.88)
+        );
+
+    border: 1px solid rgba(139, 92, 246, 0.4);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(139, 92, 246, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   TEXTO DE PRESENTACIÓN
+   ========================================================= */
+
+.box .content p {
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #dbeafe;
+
+    text-align: center;
+}
+
+/* =========================================================
+   SECCIONES - DATOS PERSONALES
+   ========================================================= */
+
+   .seccion h2 {
+    margin: 10px;
+    font-style: italic;
+   }
+
+
+   .contenido-seccion{
+    justify-self: center;
+    margin: 20px;
+    border: #06b6d4 1px solid;
+    padding: 10px;
+    /* display: flex; */
+   }
+
+   .contenido-seccion h3 {
+    font-style: italic;
+    text-decoration: double;
+   }
+
+
+/* =========================================================
+   TARJETAS
+   =========================================================
+   ========================================================= */
+
+.cardcontainer {
+    display: flex;
+
+    width: 1400px;
+
+    flex-direction: row;
+
+    justify-self: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    row-gap: 35px;
+
+    margin-bottom: 50px;
+}
+
+
+.card {
+    width: 150px;
+    height: 200px;
+
+    perspective: 1000px;
+}
+
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================================================
+   CARAS DE LAS TARJETAS
+   ========================================================= */
+
+.card-front,
+.card-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FRENTE
+   ========================================================= */
+
+.card-front {
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    /* background:
+        linear-gradient(
+            145deg,
+            #f1f5f9,
+            #cbd5e1
+        ); */
+
+    /* border: 1px solid rgba(255, 255, 255, 0.7); */
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.4);
+
+    transform: rotateY(0deg);
+}
+
+
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
+
+.card-front img {
+    width: 150px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 5px 5px rgba(0, 0, 0, 0.25));
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.card:hover .card-front img {
+    transform: scale(1.03);
+
+    filter:
+        drop-shadow(0 0 8px rgba(6, 182, 212, 0.35));
+}
+
+
+/* =========================================================
+   PARTE TRASERA
+   ========================================================= */
+
+.card-back {
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    /* background:
+        linear-gradient(
+            145deg,
+            #7c3aed,
+            #2563eb,
+            #0891b2
+        ); */
+
+    /* border: 1px solid rgba(103, 232, 249, 0.35); */
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.703),
+        inset 0 0 25px rgba(6, 181, 212, 0.658);
+
+    transform: rotateY(180deg);
+}
+
+.card-back p {
+    margin: 0;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   EFECTO TARJETAS
+   ========================================================= */
+
+.card:hover {
+    filter:
+        drop-shadow(0 8px 15px rgba(6, 182, 212, 0.18));
+}
+
+
+/* =========================================================
+   SELECCIÓN
+   ========================================================= */
+
+::selection {
+    background-color: #7c3aed;
+
+    color: #ffffff;
+}
+
+
+
+.piep {
+    color: #cfcfcf70;
+    justify-self: center;
+    display: flex;
+    margin: 10px;
 }
